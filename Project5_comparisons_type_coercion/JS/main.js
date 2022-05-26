@@ -7,6 +7,8 @@ document.write("<br>");
 document.write(5>10 || 10>20); //Display False
 document.write("<br>");
 document.write(5>10 || 21>20); //Display True
+document.write("<br>");
+document.write("Big"+5);       //Display Big5
 
 function Test_1(){              //Create function Test_1
     document.getElementById("Test_1").innerHTML= isNaN('this is a string');         //Create isNaN call for Html
