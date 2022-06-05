@@ -1,0 +1,39 @@
+.center-container {
+    width: 608px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+h1 {
+    text-align: center;
+    color: rgb(245, 233, 7);
+    text-shadow: 2px 2px 3px rgb(0, 0, 0);
+}
+table {
+    border-collapse:collapse;
+    border-style: hidden;
+}
+
+td {
+    cursor: pointer;
+    border: 6px solid rgb(28, 28, 248);
+    padding: 0px;
+    width: 200px;
+    height: 200px;
+}
+body {
+    background: url(../images/greenhillzone.jpg) no-repeat 50% 50%;
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+    display: block;
+    height: 25%;
+    padding-top: 15px; 
+    padding-bottom: 15px; 
+    color: rgb(255, 255, 255);
+}
+canvas {
+    position:absolute;
+    z-index: 10;
+    pointer-events: none;
+}
