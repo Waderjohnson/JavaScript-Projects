@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Basic AJAX Demo</title>
+		<link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="main">
+			<h2>Get The Latest Content:</h2>
+			<div class='content' id="content">
+				<input type="button" class="button" value="Get Content" id="btn_content" onclick="getContent();"/>
+			</div>
+		<script type="text/javascript">
+			
+            // STEP 1: setup the xml http request object
+            var ajax = new XMLHttpRequest(); // Set's up the xml request object and assigns it to the variable ajax
+
+            // STEP 2: prepare the open ajax request
+            ajax.open("GET", "content.html"); // uses the .open() method to specify that the request will be using the GET method and sets the url for the file location being targeted.
+            
+            // STEP 3: define the ajax response callback method
+            ajax.onreadystatechange = function() { // The .onreadystatechange is used to define a function to be performed when the readyState changes (it will check at each stage)
+                if (ajax.readyState == 4) { // Uses a conditional statement to show that the readyState this function is waiting for has to be 4.
+                    document.getElementById("content").innerHTML = ajax.responseText; // Once the readyState changes to 4, the responseText that is recieved will be sent to the HTML element with the "content" id.
+                }
+            }
+
+            // STEP 4: send the ajax request for data
+            function getContent() { // Declares the function connected to the input element using the onclick property.
+                ajax.send(); // The send() method sends a request to the server for when GET is used
+                document.getElementById("btn_content").style.display = "none"; // This locates the html element with the id of "btn_content" and tells it to hide when the function is called.
+            }
+
+		</script>
+    </body>
+</html>
