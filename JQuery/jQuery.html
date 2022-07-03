@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+    
+        <script>
+            $(document).ready(function() { // This initially accesses jQuery and tells it to target the entire document. The .ready() method runs the following function as soon as the DOM is available.
+                $("html").append( // This uses jQuery to target the html tag and add the following elements to the html element.
+                    "<body>\
+                        <div id='container'>\
+                            <div id='inner'>\
+                                <h1>Basic jQuery</h1>\
+                                <p id='1'>Paragraph 1</p>\
+                                <p id='2'>Paragraph 2</p>\
+                                <p id='3'>Paragraph 3</p>\
+                            </div>\
+                        </div>\
+                    </body>"
+                );
+                $("#2").css({"color":"red"}); // This targets the paragraph with the id='2' and uses the .css() method to change the color of the paragraph to red.
+                $("#3").click(function() { // This targets the paragraph with the id='3' and uses the .click() method to call a function that targets the h1 element and hide it.
+                    $('h1').hide();
+                });
+                $("#1").dblclick(function() { // This targets the paragraph with the id='1' and uses the .dblclick() method to call a function that targets the same element to turn it blue when double clicked.
+                    $(this).css({'color':'blue'}); // Uses 'this' keyword, since the function that changes color targets the same element that is being targeted with the dblclick() method.
+                });
+                $("#2").dblclick(function() { // This targets the paragraph with the id='2' and uses the dblclick() method to call a function that targets the h1 element to show it when doubleclicked.
+                    $('h1').show();
+                });
+            });
+        </script>
+    
+</html>
